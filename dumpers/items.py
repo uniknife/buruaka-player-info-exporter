@@ -1,4 +1,3 @@
-from database.item_db import ITEM_DB
 from base_dumper import BlueArchiveDumper
 
 
@@ -17,7 +16,6 @@ class BlueArchiveItemDumper(BlueArchiveDumper):
         return [
             {
                 "id": item["UniqueId"],
-                "name": ITEM_DB[item["UniqueId"]],
                 "count": item["StackCount"],
             }
             for item in packet["ItemDBs"]
